@@ -19,6 +19,5 @@ Project created with:
 Free to include anywhere in your page to fit for best functionality. 
 
 
-Cheers 
 
 

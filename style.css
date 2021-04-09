@@ -1,53 +1,52 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font: normal 16px/100% "Arial";
 }
 
 header {
-  width: 100%;
-  height: 70px;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.search-dugme {
-  position: absolute;
-  right: 110px;
-  top: 30px;
+.search-btn {
+    top: 30px;
+    right: 110px;
+    position: absolute;
 }
-.search-dugme.active {}
-
-.search-dugme .input-holder {
+.search-btn .input-holder {
     height: 40px;
     width: 40px;
-    overflow: hidden;
-    background: white;
     border-radius:10px;
+    background: white;
+    overflow: hidden;
     position: relative;
     transition: all 0.3s ease-in-out;
 }
-.search-dugme.active .input-holder {
-    width:200px;
-    border-radius:50px;
+.search-btn.active .input-holder {
+    width: 200px;
+    border-radius: 50px;
     background: rgb(191, 191, 174);
     transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
 }
-.search-dugme .input-holder .search-input {
-    width:100%;
+.search-btn .input-holder .search-input {
     height: 20px;
-    padding:0px 70px 0 25px;
-    opacity: 0;
-    position: absolute;
+    width:100%;
     top:0px;
     left:0px;
+    opacity: 0;
+    padding:0px 70px 0 25px;
+    position: absolute;
     background: transparent;
     border:none;
     outline:none;
-    font-family:"Open Sans", Arial, Verdana;
-    font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     color: rgb(15, 15, 14);
@@ -55,97 +54,97 @@ header {
     transition: all .2s cubic-bezier(0.000, 0.105, 0.035, 1.570);
     transition-delay: 0.2s;
 }
-.search-dugme.active .input-holder .search-input {
+.search-btn.active .input-holder .search-input {
     opacity: 1;
     transform: translate(0, 10px);
 }
-.search-dugme .input-holder .search-icon {
-    width:40px;
+.search-btn .input-holder .search-icon {
     height:40px;
-    border:none;
-    border-radius: 9px;
-    background: inherit;
+    width:40px;
+    z-index: 2;
     padding:0px;
+    border-radius: 9px;
+    border:none;
     outline:none;
     position: relative;
-    z-index: 2;
+    background: inherit;
     float:right;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.search-dugme.active .input-holder .search-icon {
-    width: 30px;
+.search-btn.active .input-holder .search-icon {
     height:30px;
+    width: 30px;
     margin: 5px 10px;
     border-radius: 30px;
 }
-.search-dugme .input-holder .search-icon span {
-    width:22px;
+.search-btn .input-holder .search-icon span {
     height:26px;
+    width:22px;
+    position:relative;
     display: inline-block;
     vertical-align: middle;
-    position:relative;
     transform: rotate(-45deg);
     transition: all 0.3s cubic-bezier(0.650, -0.600, 0.240, 1.650);
 }
-.search-dugme.active .input-holder .search-icon span {
+.search-btn.active .input-holder .search-icon span {
     transform: rotate(-45deg);
 }
-.search-dugme .input-holder .search-icon span::before, .search-dugme .input-holder .search-icon span::after {
+.search-btn .input-holder .search-icon span::before, .search-btn .input-holder .search-icon span::after {
     position: absolute;
     content:'';
 }
-.search-dugme .input-holder .search-icon span::before {
-    width: 4px;
+.search-btn .input-holder .search-icon span::before {
     height: 11px;
+    width: 4px;
     left: 9px;
     top: 15px;
     border-radius: 2px;
     background: black;
 }
-.search-dugme .input-holder .search-icon span::after {
-    width: 10px;
+.search-btn .input-holder .search-icon span::after {
     height: 10px;
+    width: 10px;
     left: 3px;
     top: 2px;
     border-radius: 16px;
     border: 3px solid black;
 }
-.search-dugme .close {
-    position: absolute;
-    z-index: 1;
+.search-btn .close {
+    height:23px;
+    width:25px;
     top:8px;
     right:10px;
-    width:25px;
-    height:23px;
+    z-index: 1;
     cursor: pointer;
+    position: absolute;
+    transition-delay: 0.2s;
     transform: rotate(-180deg);
     transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
-    transition-delay: 0.2s;
 }
-.search-dugme.active .close {
+.search-btn.active .close {
     right:-37px;
+    transition-delay: 0.4s;
     transform: rotate(45deg);
     transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
-    transition-delay: 0.4s;
 }
-.search-dugme .close::before, .search-dugme .close::after {
+.search-btn .close::before, .search-btn .close::after {
     position:absolute;
     content:'';
-    background: #FE5F55;
     border-radius: 2px;
+    background: #FE5F55;
 }
-.search-dugme .close::before {
-    width: 4.5px;
+.search-btn .close::before {
     height: 24.5px;
-    left: 10px;
+    width: 4.5px;
     top: 0px;
+    left: 10px;
 }
-.search-dugme .close::after {
-    width: 25px;
+.search-btn .close::after {
     height: 5px;
-    left: 0px;
+    width: 25px;
     top: 10px;
+    left: 0px;
 }
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
